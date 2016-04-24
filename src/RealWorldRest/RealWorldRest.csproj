@@ -74,6 +74,43 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="browser\.gitignore" />
+    <Content Include="browser\browser.html" />
+    <Content Include="browser\js\hal.js" />
+    <Content Include="browser\js\hal\browser.js" />
+    <Content Include="browser\js\hal\http\client.js" />
+    <Content Include="browser\js\hal\resource.js" />
+    <Content Include="browser\js\hal\views\browser.js" />
+    <Content Include="browser\js\hal\views\documentation.js" />
+    <Content Include="browser\js\hal\views\embedded_resource.js" />
+    <Content Include="browser\js\hal\views\embedded_resources.js" />
+    <Content Include="browser\js\hal\views\explorer.js" />
+    <Content Include="browser\js\hal\views\inspector.js" />
+    <Content Include="browser\js\hal\views\links.js" />
+    <Content Include="browser\js\hal\views\location_bar.js" />
+    <Content Include="browser\js\hal\views\navigation.js" />
+    <Content Include="browser\js\hal\views\non_safe_request_dialog.js" />
+    <Content Include="browser\js\hal\views\properties.js" />
+    <Content Include="browser\js\hal\views\query_uri_dialog.js" />
+    <Content Include="browser\js\hal\views\request_headers.js" />
+    <Content Include="browser\js\hal\views\resource.js" />
+    <Content Include="browser\js\hal\views\response.js" />
+    <Content Include="browser\js\hal\views\response_body.js" />
+    <Content Include="browser\js\hal\views\response_headers.js" />
+    <Content Include="browser\MIT-LICENSE.txt" />
+    <Content Include="browser\styles.css" />
+    <Content Include="browser\vendor\css\bootstrap-responsive.css" />
+    <Content Include="browser\vendor\css\bootstrap.css" />
+    <Content Include="browser\vendor\img\ajax-loader.gif" />
+    <Content Include="browser\vendor\img\glyphicons-halflings-white.png" />
+    <Content Include="browser\vendor\img\glyphicons-halflings.png" />
+    <Content Include="browser\vendor\js\backbone.js" />
+    <Content Include="browser\vendor\js\bootstrap.js" />
+    <Content Include="browser\vendor\js\jquery-1.10.2.js" />
+    <Content Include="browser\vendor\js\jquery-1.10.2.min.js" />
+    <Content Include="browser\vendor\js\underscore.js" />
+    <Content Include="browser\vendor\js\URI.min.js" />
+    <Content Include="browser\vendor\js\uritemplates.js" />
     <Content Include="Content\nancy-logo.png" />
     <Content Include="icon.png" />
     <Content Include="Web.config">
@@ -82,12 +119,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Data\Class1.cs" />
+    <Compile Include="Data\Entities\Profile.cs" />
+    <Compile Include="Modules\DynamicExtensions.cs" />
     <Compile Include="Modules\IndexModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\index.cshtml" />
+    <Content Include="browser\.git" />
+    <Content Include="browser\README.adoc" />
+    <Content Include="browser\vendor\js\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
