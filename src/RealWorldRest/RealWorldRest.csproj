@@ -125,6 +125,8 @@
     <Compile Include="Data\IDatabase.cs" />
     <Compile Include="Modules\DynamicExtensions.cs" />
     <Compile Include="Modules\IndexModule.cs" />
+    <Compile Include="Modules\ModuleBase.cs" />
+    <Compile Include="Modules\ProfilesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
