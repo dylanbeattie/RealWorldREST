@@ -6,5 +6,17 @@
   {
     "Name": "Thor",
     "Username": "thor"
+  },
+  {
+    "Name": "Bruce Wayne",
+    "Username": "batman"
+  },
+  {
+    "Name": "Steven Robbins",
+    "Username": "grumpydev"
+  },
+  {
+    "Name": "Adam Goss",
+    "Username": "gossman"
   }
 ]

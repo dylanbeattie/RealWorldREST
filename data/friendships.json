@@ -1,8 +1,20 @@
 [
-  {
-    "Names": [
-      "ironman",
-      "thor"
-    ]
-  }
+    {
+        "Names": [
+            "ironman",
+            "thor"
+        ]
+    },
+    {
+        "Names": [
+            "grumpydev",
+            "thor"
+        ]
+    },
+    {
+        "Names": [
+            "gossman",
+            "grumpydev"
+        ]
+    }
 ]

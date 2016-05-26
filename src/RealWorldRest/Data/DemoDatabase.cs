@@ -46,6 +46,7 @@ namespace RealWorldRest.Data {
         public void CreateProfile(Profile profile) {
             if (LoadProfile(profile.Username) != null) throw new ArgumentException("That username is not available");
             profiles.Add(profile);
+            Save();
 
         }
 

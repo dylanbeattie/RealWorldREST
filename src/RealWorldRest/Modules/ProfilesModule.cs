@@ -13,40 +13,38 @@ namespace RealWorldRest.Modules {
         public ProfilesModule() {
 
             Get["/profiles"] = _ => {
-                var profiles = db.ListProfiles().Select(p => {
-                    var d = p.ToDynamic();
-                    d._links = new {
-                        self = new {
-                            href = String.Format("/profiles/{0}", p.Username)
-                        }
-                    };
-                    return (d);
-                });
-                return new {
+                var profiles = db.ListProfiles();
+                var result = new {
                     items = profiles,
                     count = profiles.Count(),
                     index = 0,
                     _links = new {
                         self = new {
-                            href = "/profiles"
+                            href = "http://restdemo/profiles"
                         }
                     }
                 };
+                return (result);
             };
 
             Get["/profiles/{username}"] = args => {
-                var profile = (object)db.LoadProfile(args.username);
-                var d = profile.ToDynamic();
-                d._links = new {
-                    self = new { href = String.Format("/profiles/{0}", d.Username) },
-                    friends = new { href = String.Format("/profiles/{0}/friends", d.Username) }
+                var expand = (string)Request.Query["expand"];
+                var profile = db.LoadProfile((string)args.username).ToDynamic();
+                profile._links = new {
+                    self = new {
+                        href = String.Format("http://restdemo/profiles/{0}", args.username)
+                    },
+                    friends = new {
+                        href = String.Format("http://restdemo/profiles/{0}/friends", args.username)
+                    }
                 };
-                if (Request.Query["expand"] == "friends") {
-                    d._embedded = new {
+                if (expand == "friends") {
+                    profile._embedded = new {
                         friends = db.LoadFriends(args.username)
                     };
                 }
-                return (d);
+
+                return (profile);
             };
 
 
@@ -64,23 +62,6 @@ namespace RealWorldRest.Modules {
                 var friend = this.Bind<Profile>();
                 var person = db.LoadProfile(args.name);
                 db.CreateFriendship(person.Username, friend.Username);
-                var result = (Response)HttpStatusCode.Created;
-                return (result);
-            };
-        }
-    }
-
-    public class FriendsModule : ModuleBase {
-
-        private readonly IDatabase db = new DemoDatabase();
-
-        public FriendsModule() {
-            Get["/profiles/{name}/friends"] = args => db.LoadFriends(args.Name);
-
-            Post["/profiles/{name}/friends"] = args => {
-                var profile1 = db.LoadProfile(args.Name);
-                var profile2 = this.Bind<Profile>();
-                db.CreateFriendship(profile1.Username, profile2.Username);
                 var result = (Response)HttpStatusCode.Created;
                 return (result);
             };
