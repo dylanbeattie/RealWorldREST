@@ -12,38 +12,10 @@ namespace RealWorldRest.Modules {
 
         public ProfilesModule() {
 
-            Get["/profiles"] = _ => {
-                var profiles = db.ListProfiles();
-                var result = new {
-                    items = profiles,
-                    count = profiles.Count(),
-                    index = 0,
-                    _links = new {
-                        self = new {
-                            href = "http://restdemo/profiles"
-                        }
-                    }
-                };
-                return (result);
-            };
+            Get["/profiles"] = _ => db.ListProfiles();
 
             Get["/profiles/{username}"] = args => {
-                var expand = (string)Request.Query["expand"];
-                var profile = db.LoadProfile((string)args.username).ToDynamic();
-                profile._links = new {
-                    self = new {
-                        href = String.Format("http://restdemo/profiles/{0}", args.username)
-                    },
-                    friends = new {
-                        href = String.Format("http://restdemo/profiles/{0}/friends", args.username)
-                    }
-                };
-                if (expand == "friends") {
-                    profile._embedded = new {
-                        friends = db.LoadFriends(args.username)
-                    };
-                }
-
+                var profile = db.LoadProfile((string)args.username);
                 return (profile);
             };
 

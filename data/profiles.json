@@ -1,22 +1,10 @@
 [
-  {
-    "Name": "Tony Stark",
-    "Username": "ironman"
-  },
-  {
-    "Name": "Thor",
-    "Username": "thor"
-  },
-  {
-    "Name": "Bruce Wayne",
-    "Username": "batman"
-  },
-  {
-    "Name": "Steven Robbins",
-    "Username": "grumpydev"
-  },
-  {
-    "Name": "Adam Goss",
-    "Username": "gossman"
-  }
+    {
+        "Name": "Tony Stark",
+        "Username": "ironman"
+    },
+    {
+        "Name": "Bruce Wayne",
+        "Username": "batman"
+    }
 ]
