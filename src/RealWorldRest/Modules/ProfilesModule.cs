@@ -16,7 +16,26 @@ namespace RealWorldRest.Modules {
 
             Get["/profiles/{username}"] = args => {
                 var profile = db.LoadProfile((string)args.username);
-                return (profile);
+                var qs = (string)Request.Query["expand"];
+                var result = profile.ToDynamic();
+                result._links = new {
+                    self = new {
+                        href = "http://restdemo/profiles/" + result.Username
+                    },
+                    friends = new {
+                        href = String.Format("http://restdemo/profiles/{0}/friends", result.Username)
+                    }
+                };
+
+                if (qs == "friends") {
+                    result._embedded = new {
+                        friends = db.LoadFriends(result.Username)
+
+                    };
+                }
+
+
+                return (result);
             };
 
 
