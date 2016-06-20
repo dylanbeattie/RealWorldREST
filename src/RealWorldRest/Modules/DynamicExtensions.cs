@@ -4,10 +4,12 @@ using System.Dynamic;
 using System.Linq;
 
 namespace RealWorldRest.Modules {
-    public static class DynamicExtensions {
+    public static class ObjectExtensions {
         public static dynamic ToDynamic(this object value) {
             IDictionary<string, object> expando = new ExpandoObject();
-            foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(value.GetType())) expando.Add(property.Name, property.GetValue(value));
+            foreach (PropertyDescriptor property 
+                in TypeDescriptor.GetProperties(value.GetType())) 
+                expando.Add(property.Name, property.GetValue(value));
             return (ExpandoObject)expando;
         }
 
