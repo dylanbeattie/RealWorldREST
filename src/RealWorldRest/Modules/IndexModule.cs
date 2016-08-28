@@ -5,17 +5,7 @@ using Nancy;
 namespace RealWorldRest.Modules {
     public class IndexModule : ModuleBase {
         public IndexModule() {
-            Get["/"] = _ => new {
-                _links = new {
-                    self = new {
-                        href = "/"
-                    }
-                },
-                greeting = "Hello SmartDevsUG"
-            };
-
+            Get["/"] = _ => "Hello DDD11";
         }
     }
-
-
 }

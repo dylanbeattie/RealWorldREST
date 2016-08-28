@@ -174,7 +174,7 @@ xcopy /s /y /R "$(SolutionDir)packages\Nancy.Viewengines.Razor.1.4.3\lib\Net40\N
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63374</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63374/</IISUrl>
+          <IISUrl>http://localhost:12345/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
