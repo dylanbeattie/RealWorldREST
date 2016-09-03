@@ -39,8 +39,11 @@ namespace RealWorldRest.Data {
             friendships = ReadData<IList<Friendship>>("friendships") ?? new List<Friendship>();
         }
 
-        public IEnumerable<Profile> ListProfiles() {
-            return (profiles);
+        public const int PAGE_SIZE = 3;
+
+        public IEnumerable<Profile> ListProfiles(int index, out int total) {
+            total = profiles.Count();
+            return (profiles.Skip(PAGE_SIZE * index).Take(PAGE_SIZE));
         }
 
         public void CreateProfile(Profile profile) {
