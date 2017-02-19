@@ -1,0 +1,156 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+html {
+    font-family: 'Source Sans Pro', Arial, helvetica, sans-serif;
+    margin: 0;
+}
+
+body {
+    padding-top: 64px;
+}
+
+fieldset#explorer-fieldset {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #ccc;
+    border: 0;
+    border-bottom: 1px solid #000;
+    z-index: 9;
+}
+
+    fieldset#explorer-fieldset label {
+        width: 0;
+        position: relative;
+        top: -24px;
+        left: 4px;
+        display: inline-block;
+        font-size: 14px;
+    }
+
+        fieldset#explorer-fieldset label[for=headers-textarea] {
+            top: -56px;
+        }
+
+    fieldset#explorer-fieldset input, fieldset#explorer-fieldset textarea, fieldset#explorer-fieldset select {
+        margin-top: 24px;
+        padding: 4px;
+        border-radius: 2px;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        height: 30px;
+    }
+
+
+        fieldset#explorer-fieldset input[type=button] {
+            background-color: #999;
+        }
+
+        fieldset#explorer-fieldset input[type=text], fieldset#explorer-fieldset input[type=password] {
+            font-family: Consolas;
+            width: 150px;
+        }
+
+        fieldset#explorer-fieldset input#server-input {
+            width: 40%;
+            box-sizing: border-box;
+        }
+
+        fieldset#explorer-fieldset input#endpoint-input {
+            width: 40%;
+            box-sizing: border-box;
+        }
+
+        fieldset#explorer-fieldset textarea#headers-textarea {
+            width: 634px;
+            height: 40px;
+        }
+
+
+
+pre#json-data {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+div#response-wrapper {
+    position: relative;
+}
+
+    div#response-wrapper div#spinner {
+        background-color: #fff;
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        opacity: 0.8;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 100px;
+    }
+
+p#api-bookmarks {
+    margin: 0;
+    padding: 4px;
+    font-size: 80%;
+}
+
+a.action-button {
+    border: 1px solid #333;
+    border-radius: 2px;
+    padding: 2px;
+    background-color: #666;
+    color: #fff;
+    margin: 2px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+    a.action-button.DELETE {
+        background-color: #900;
+        border-color: #300;
+    }
+
+        a.action-button.DELETE:hover {
+            background-color: #c33;
+        }
+
+    a.action-button.POST {
+        background-color: #009;
+        border-color: #003;
+    }
+
+        a.action-button.POST:hover {
+            background-color: #33c;
+            border-color: #003;
+        }
+
+    a.action-button.PUT {
+        background-color: #090;
+        border-color: #030;
+    }
+
+        a.action-button.PUT:hover {
+            background-color: #3c3;
+        }
+
+
+form.api-form {
+    display: none;
+}
+
+    form.api-form label {
+        width: 100px;
+        font-weight: bold;
+        float: left;
+    }
+
+    form.api-form textarea {
+        width: 100%;
+        height: 300px;
+        line-height: 160%;
+        font-family: "Fira Code", Consolas, monospace;
+        font-size: 12px;
+    }

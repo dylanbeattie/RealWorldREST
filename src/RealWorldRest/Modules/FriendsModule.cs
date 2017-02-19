@@ -5,7 +5,7 @@ using RealWorldRest.Data.Entities;
 
 namespace RealWorldRest.Modules
 {
-    public class FriendsModule : ModuleBase {
+    public class FriendsModule : NancyModule {
 
         private readonly IDatabase db = new DemoDatabase();
 

@@ -9,7 +9,7 @@ namespace RealWorldRest {
 
         protected override void ConfigureConventions(NancyConventions nancyConventions) {
             base.ConfigureConventions(nancyConventions);
-            Conventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("browser", "browser"));
+            Conventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("explorer", "explorer"));
         }
     }
 }

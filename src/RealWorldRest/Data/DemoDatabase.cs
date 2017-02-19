@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
 using System.Linq;
-using System.Web;
-using System.Web.Configuration;
 using Newtonsoft.Json;
 using RealWorldRest.Data.Entities;
 
 namespace RealWorldRest.Data {
     public class DemoDatabase : IDatabase {
-        private const string DATA_PATH = @"C:\projects\RealWorldRest\data\";
+        private const string DATA_PATH = @"D:\projects\RealWorldRest\data\";
 
         private static string Qualify(string filePath) {
             return (Path.Combine(DATA_PATH, filePath));
@@ -30,6 +27,7 @@ namespace RealWorldRest.Data {
             WriteData("profiles", profiles);
             WriteData("friendships", friendships);
         }
+
         private void WriteData(string filename, object data) {
             File.WriteAllText(Qualify(filename + ".json"), JsonConvert.SerializeObject(data, Formatting.Indented));
         }
@@ -40,14 +38,13 @@ namespace RealWorldRest.Data {
         }
 
         public IEnumerable<Profile> ListProfiles() {
-            return (profiles);
+            return profiles;
         }
 
         public void CreateProfile(Profile profile) {
             if (LoadProfile(profile.Username) != null) throw new ArgumentException("That username is not available");
             profiles.Add(profile);
             Save();
-
         }
 
         public Profile LoadProfile(String username) {
@@ -59,14 +56,17 @@ namespace RealWorldRest.Data {
             var friendship = new Friendship(username1, username2);
             friendships.Add(friendship);
             Save();
-
         }
         public IEnumerable<Profile> LoadFriends(String username) {
-            var guids = friendships.Where(f => f.Names.Contains(username))
+            var friends = friendships.Where(f => f.Names.Contains(username))
                 .SelectMany(f => f.Names)
                 .Distinct()
                 .Where(g => g != username);
-            return (guids.Select(LoadProfile));
+            return (friends.Select(LoadProfile));
+        }
+
+        public int CountProfiles() {
+            return profiles.Count;
         }
     }
 }

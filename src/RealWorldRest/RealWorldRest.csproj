@@ -113,6 +113,36 @@
     <Content Include="browser\vendor\js\URI.min.js" />
     <Content Include="browser\vendor\js\uritemplates.js" />
     <Content Include="Content\nancy-logo.png" />
+    <Content Include="explorer\explorer.css" />
+    <Content Include="explorer\explorer.html" />
+    <Content Include="explorer\images\ajax-loader.gif" />
+    <Content Include="explorer\jQueryUI\themes\explorer\AUTHORS.txt" />
+    <Content Include="explorer\jQueryUI\themes\explorer\external\jquery\jquery.js" />
+    <Content Include="explorer\jQueryUI\themes\explorer\images\ui-icons_444444_256x240.png" />
+    <Content Include="explorer\jQueryUI\themes\explorer\images\ui-icons_555555_256x240.png" />
+    <Content Include="explorer\jQueryUI\themes\explorer\images\ui-icons_777620_256x240.png" />
+    <Content Include="explorer\jQueryUI\themes\explorer\images\ui-icons_777777_256x240.png" />
+    <Content Include="explorer\jQueryUI\themes\explorer\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="explorer\jQueryUI\themes\explorer\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="explorer\jQueryUI\themes\explorer\index.html" />
+    <Content Include="explorer\jQueryUI\themes\explorer\jquery-ui.css" />
+    <Content Include="explorer\jQueryUI\themes\explorer\jquery-ui.js" />
+    <Content Include="explorer\jQueryUI\themes\explorer\jquery-ui.min.css" />
+    <Content Include="explorer\jQueryUI\themes\explorer\jquery-ui.min.js" />
+    <Content Include="explorer\jQueryUI\themes\explorer\jquery-ui.structure.css" />
+    <Content Include="explorer\jQueryUI\themes\explorer\jquery-ui.structure.min.css" />
+    <Content Include="explorer\jQueryUI\themes\explorer\jquery-ui.theme.css" />
+    <Content Include="explorer\jQueryUI\themes\explorer\jquery-ui.theme.min.css" />
+    <Content Include="explorer\jQueryUI\themes\explorer\LICENSE.txt" />
+    <Content Include="explorer\scripts\explorer.js" />
+    <None Include="explorer\scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="explorer\scripts\jquery-3.1.1.js" />
+    <Content Include="explorer\scripts\jquery-3.1.1.min.js" />
+    <Content Include="explorer\scripts\jquery-3.1.1.slim.js" />
+    <Content Include="explorer\scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="explorer\scripts\jquery-ui-1.12.1.js" />
+    <Content Include="explorer\scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="explorer\spinner.gif" />
     <Content Include="icon.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -121,12 +151,15 @@
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Data\DemoDatabase.cs" />
+    <Compile Include="Data\Entities\Friendship.cs" />
+    <Compile Include="Data\Entities\Photo.cs" />
     <Compile Include="Data\Entities\Profile.cs" />
+    <Compile Include="Data\Entities\StatusUpdate.cs" />
     <Compile Include="Data\IDatabase.cs" />
+    <Compile Include="Data\Page.cs" />
     <Compile Include="Modules\DynamicExtensions.cs" />
     <Compile Include="Modules\FriendsModule.cs" />
     <Compile Include="Modules\IndexModule.cs" />
-    <Compile Include="Modules\ModuleBase.cs" />
     <Compile Include="Modules\ProfilesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -136,6 +169,9 @@
     <Content Include="browser\.git" />
     <Content Include="browser\README.adoc" />
     <Content Include="browser\vendor\js\jquery-1.10.2.min.map" />
+    <Content Include="explorer\jQueryUI\themes\explorer\package.json" />
+    <Content Include="explorer\scripts\jquery-3.1.1.min.map" />
+    <Content Include="explorer\scripts\jquery-3.1.1.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
