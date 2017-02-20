@@ -5,6 +5,7 @@
         public Friendship(params string[] names) {
             Names = names;
         }
+
         public string[] Names { get; set; }
     }
 }

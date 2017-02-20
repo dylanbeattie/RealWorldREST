@@ -1,5 +1,4 @@
 ﻿namespace RealWorldRest.Data.Entities {
-
     public class Profile {
         public Profile() { }
 

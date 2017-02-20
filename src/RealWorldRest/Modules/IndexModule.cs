@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web.ModelBinding;
-using Nancy;
+﻿using Nancy;
 
 namespace RealWorldRest.Modules {
     public class IndexModule : NancyModule {

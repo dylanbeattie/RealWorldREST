@@ -11,7 +11,7 @@ namespace RealWorldRest.Modules {
                 in TypeDescriptor.GetProperties(value.GetType())) {
                 expando.Add(property.Name, property.GetValue(value));
             }
-            return (ExpandoObject) expando;
+            return (ExpandoObject)expando;
         }
 
 
