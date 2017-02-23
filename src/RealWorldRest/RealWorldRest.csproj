@@ -156,10 +156,7 @@
     <Compile Include="Data\Entities\Profile.cs" />
     <Compile Include="Data\Entities\StatusUpdate.cs" />
     <Compile Include="Data\IDatabase.cs" />
-    <Compile Include="Data\Page.cs" />
     <Compile Include="Modules\DynamicExtensions.cs" />
-    <Compile Include="Modules\FriendsModule.cs" />
-    <Compile Include="Modules\IndexModule.cs" />
     <Compile Include="Modules\ProfilesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -208,6 +208,10 @@ function getCookie(key) {
         $("#server-input").val(apiServer);
 
         $("#go-button").click(go);
+        $("#reset-button").click(function () {
+            $("#json-data").html("Ready.");
+            return (false);
+        });
 
         $(window).on("hashchange", function () {
             go(location.hash.substring(1));
