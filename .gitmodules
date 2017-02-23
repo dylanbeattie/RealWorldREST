@@ -6,6 +6,3 @@
 	path = src\\RealWorldRest
 [submodule "src\\RealWorldRest"]
 	url = https://github.com/mikekelly/hal-browser
-[submodule "src/RealWorldRest/browser"]
-	path = src/RealWorldRest/browser
-	url = https://github.com/mikekelly/hal-browser
