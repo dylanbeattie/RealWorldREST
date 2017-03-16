@@ -1,15 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealWorldRest", "RealWorldRest\RealWorldRest.csproj", "{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "jsondata", "jsondata", "{33B48AC8-0BF2-4D3B-B5FB-245ABC210F75}"
 	ProjectSection(SolutionItems) = preProject
 		..\data\friendships.json = ..\data\friendships.json
 		..\data\profiles.json = ..\data\profiles.json
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealWorldRest.NancyFX", "RealWorldRest.NancyFX\RealWorldRest.NancyFX.csproj", "{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealWorldRest.Common", "RealWorldRest.Common\RealWorldRest.Common.csproj", "{E18CE94B-2D87-45D4-915A-858BAFD7260D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealWorldRest.WebApi", "RealWorldRest.WebApi\RealWorldRest.WebApi.csproj", "{7681DB36-975B-42C7-95DE-241488D4D238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealWorldRest.FrontEnd", "RealWorldRest.FrontEnd\RealWorldRest.FrontEnd.csproj", "{B3DDD128-4ADF-4BC1-9A08-77F6A66E2394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E18CE94B-2D87-45D4-915A-858BAFD7260D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E18CE94B-2D87-45D4-915A-858BAFD7260D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E18CE94B-2D87-45D4-915A-858BAFD7260D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E18CE94B-2D87-45D4-915A-858BAFD7260D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7681DB36-975B-42C7-95DE-241488D4D238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7681DB36-975B-42C7-95DE-241488D4D238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7681DB36-975B-42C7-95DE-241488D4D238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7681DB36-975B-42C7-95DE-241488D4D238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3DDD128-4ADF-4BC1-9A08-77F6A66E2394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3DDD128-4ADF-4BC1-9A08-77F6A66E2394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3DDD128-4ADF-4BC1-9A08-77F6A66E2394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3DDD128-4ADF-4BC1-9A08-77F6A66E2394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
