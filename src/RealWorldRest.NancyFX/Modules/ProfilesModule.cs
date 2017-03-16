@@ -2,6 +2,7 @@ using System.Dynamic;
 using System.Linq;
 using Nancy;
 using Nancy.ModelBinding;
+using RealWorldRest.Common;
 using RealWorldRest.Common.Data;
 using RealWorldRest.Common.Data.Entities;
 
@@ -27,31 +28,13 @@ namespace RealWorldRest.NancyFX.Modules {
             var count = 10;
             var profiles = db.ListProfiles().Skip(index).Take(count);
             var total = db.CountProfiles();
-            var links = Paginate("/profiles", index, count, total);
+            var links = Hal.Paginate("/profiles", index, count, total);
             return new {
                 _links = links,
                 items = profiles
             };
         }
 
-        private dynamic Href(string url) {
-            return new { Href = url };
-        }
-
-
-        private dynamic Paginate(string path, int index, int count, int total) {
-            dynamic links = new ExpandoObject();
-            var maxIndex = total - 1;
-            links.first = Href($"{path}?index=0");
-            links.final = Href($"{path}?index={maxIndex - maxIndex % count}");
-            if (index > 0) {
-                links.last = Href($"{path}?index={index - count}");
-            }
-            if (index + count < maxIndex) {
-                links.next = Href($"{path}?index={index + count}");
-            }
-            return (links);
-        }
 
         private dynamic GetProfile(string username) {
             var profile = db.LoadProfile(username).ToDynamic();
