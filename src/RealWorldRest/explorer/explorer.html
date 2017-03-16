@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive API Explorer</title>
+    <meta name="sort" value="99" />
+    <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui-1.12.1.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="jQueryUI/themes/explorer/jquery-ui.min.css" />
+    <link type="text/css" rel="stylesheet" href="explorer.css" />
+</head>
+<body>
+    <form id="explorer-form" action="#">
+        <fieldset id="explorer-fieldset">
+            <!--
+            <label for="username-input">Username:</label>
+            <input type="text" placeholder="username" id="username-input" />
+            <label for="password-input">Password:</label>
+            <input type="password" placeholder="password" id="password-input" />
+            -->
+            <label for="server-input">Server:</label>
+            <input type="text" name="server" id="server-input" placeholder="host" value="http://localhost" />
+            <!--
+            <label for="headers-textarea">Headers</label>
+            <textarea name="endpoint" id="headers-textarea" placeholder="X-Header1: Value1
+                X-Header2: Value2"></textarea><br/>-->
+            <label for="endpoint-input">Path:</label>
+            <input type="text" name="endpoint" id="endpoint-input" placeholder="endpoint" value="/root" />
+            <input type="submit" id="go-button" value="Go" />
+            <a href="#" id="reset-button">Reset</a><br />
+        </fieldset>
+    </form>
+    <div id="response-wrapper">
+
+        <div id="spinner">
+            <img src="images/ajax-loader.gif" />
+        </div>
+        <pre id="json-data"></pre>
+    </div>
+    <script type="text/javascript" src="scripts/explorer.js"></script>
+</body>
+</html>
