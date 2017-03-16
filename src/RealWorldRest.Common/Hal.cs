@@ -9,7 +9,7 @@ namespace RealWorldRest.Common {
     public class Hal {
 
         private static dynamic Href(string url) {
-            return new { Href = url };
+            return new { href = url };
         }
 
         /// <summary>Generate a hypermedia links object containing first/final/prev/next links for paging through datasets.</summary>
