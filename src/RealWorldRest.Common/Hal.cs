@@ -19,13 +19,13 @@ namespace RealWorldRest.Common {
         /// <param name="total">The total number of items in the collection</param>
         /// <returns></returns>
         public static dynamic Paginate(string path, int index, int count, int total) {
-            dynamic links = new ExpandoObject();
+            dynamic _links = new ExpandoObject();
             var maxIndex = total - 1;
-            links.first = Href($"{path}?index=0");
-            links.final = Href($"{path}?index={maxIndex - maxIndex % count}");
-            if (index > 0) links.last = Href($"{path}?index={index - count}");
-            if (index + count < maxIndex) links.next = Href($"{path}?index={index + count}");
-            return links;
+            _links.first = Href($"{path}?index=0");
+            _links.final = Href($"{path}?index={maxIndex - maxIndex % count}");
+            if (index > 0) _links.last = Href($"{path}?index={index - count}");
+            if (index + count < maxIndex) _links.next = Href($"{path}?index={index + count}");
+            return _links;
         }
     }
 }

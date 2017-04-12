@@ -21,7 +21,7 @@ namespace RealWorldRest.WebApi {
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new { controller = "Root", id = RouteParameter.Optional }
             );
         }
     }
