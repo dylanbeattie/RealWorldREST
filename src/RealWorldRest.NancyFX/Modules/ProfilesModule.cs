@@ -22,7 +22,7 @@ namespace RealWorldRest.NancyFX.Modules {
     }
 
     private dynamic GetProfile(string username) {
-      var profile = db.LoadProfile(username);
+      var profile = db.LoadProfile(username);      
       return profile;
     }
 
@@ -65,10 +65,8 @@ namespace RealWorldRest.NancyFX.Modules {
     public dynamic GetFriends(string username) {
       return db.LoadFriends(username);
     }
-
   }
 }
-
 
 
 //.ToDynamic();
