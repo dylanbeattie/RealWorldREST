@@ -8,9 +8,9 @@ using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace RealWorldRest.WebApi {
-    public class WebApiApplication : System.Web.HttpApplication {
-        protected void Application_Start() {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
-        }
+  public class WebApiApplication : HttpApplication {
+    protected void Application_Start() {
+      GlobalConfiguration.Configure(WebApiConfig.Register);
     }
+  }
 }

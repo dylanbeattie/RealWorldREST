@@ -19,10 +19,12 @@ function getCookie(key) {
         return function (jqXHR, textStatus, errorThrown) {
             var headers = jqXHR.getAllResponseHeaders();
             var html = "<strong>" + method + " " + absoluteUrl + "</strong>\r\n\r\n";
-            // html += headers.replace(/access\-control.*\r\n/mg, "") + "\r\n";
+            html += headers.replace(/access\-control.*\r\n/mg, "") + "\r\n";
             html += jqXHR.status + " " + textStatus + "\r\n\r\n";
             try {
-                html += JSON.stringify(JSON.parse(jqXHR.responseText), null, 2).replace(/\\r\\n/g, "\r\n")
+                html += JSON
+                    .stringify(JSON.parse(jqXHR.responseText), null, 2)
+                    .replace(/\\r\\n/g, "\r\n")
                     .replace(/ --->/g, "\r\n    --->");
             } catch (error) {
                 html += jqXHR.responseText;
@@ -32,6 +34,7 @@ function getCookie(key) {
             if (typeof callback === "function") callback();
         };
     };
+
     this.buildSuccessHandler = function (method, absoluteUrl, callback) {
         return function (data, textStatus, jqXhr) {
             var headers = jqXhr.getAllResponseHeaders();
